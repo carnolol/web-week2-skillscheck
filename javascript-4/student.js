@@ -13,10 +13,11 @@ let me = {
     superHeroName:'Jazz Hands',
     homeTown:'Sandy',
     superPowers:['spoof','splat','plink'],
-    superPowerXP: Math.floor(Math.random() * 100) + 1 ,
+    superPowerXP: function (){
+        Math.floor(Math.random() * 100) + 1 
     },
     profileImage: function(){
-        
+        return `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`
     }
 }
 // The superHeroName key should be your name if you were a super hero. Feel free to jazz it up and get silly with it, e.g. "Thunderous Gas Man". 
@@ -35,7 +36,7 @@ let me = {
 // In this step, you will create three variables that will hold some data from your me object. The first variable you create should be 'regularName', and it should receive its value from the value of your firstName key on the me object above. The next variable is 'superName' which should have its value assigned as the value of the superHeroName property on the me object. The last variable you should create is 'homeTown' which will be the value of homeTown on the me object
 
 const regularName = me.firstname
-const superHeroName = me.superHeroName
+const superName = me.superHeroName
 const homeTown = me.homeTown
 console.log(regularName)
 //////////////////Step 4////////////////////
@@ -45,11 +46,11 @@ console.log(regularName)
 
 function setColor(arr){
     arr.splice(2,1)
-    for(let i =0; i < arr.length -1; i++){
-        if(arr[i] = blue)
+    for(let i =0; i < arr.length; i++){
+        if(arr[i] == 'blue')
         arr[i] = '#4D4DFF'
     }
-    background(arr)
+    background(arr[0],arr[1],arr[2])
 }
 //////////////////Step 5////////////////////
 //Create a function called 'setPowers' that takes in 'arr' as a parameter. In your setPowers function, loop over the arr parameter and run a function we created called createLi(), which will take each item of the array as an argument. Remember, you did not create the createLi function. The createLi function is a function we created that determines how the content is displayed.
