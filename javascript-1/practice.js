@@ -144,9 +144,16 @@ const total = myNumbers.reduce((a,e) => a+e,0)
 
 const myNumbersIndex = []
 
-myNumbers.forEach(e => {
-	myNumbersIndex.push(e.myNumbers)
+// myNumbers.forEach(function(index){
+// 	myNumbers.push(index.myNumbersIndex)
+// })
+
+myNumbers.forEach((e,i) => {
+	if(e>i || e<i)
+	console.log(e)
+	myNumbersIndex.push(i)
 })
+// console.log(i)
 //////////////////PROBLEM 18////////////////////
 
 // Did you know that George Foreman has five sons named George? Go ahead and change everyone's name in the notGeorge array to George using .map. Store the resulting array in a variable named 'forTheLoveOfGeorge'.
